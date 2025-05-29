@@ -1,0 +1,10 @@
+C:\Users\fran_\OneDrive\Desktop\ppai\Red Sismica\Red Sismica\bin\Debug\Red Sismica.exe.config
+C:\Users\fran_\OneDrive\Desktop\ppai\Red Sismica\Red Sismica\bin\Debug\Red Sismica.exe
+C:\Users\fran_\OneDrive\Desktop\ppai\Red Sismica\Red Sismica\bin\Debug\Red Sismica.pdb
+C:\Users\fran_\OneDrive\Desktop\ppai\Red Sismica\Red Sismica\obj\Debug\Red Sismica.csproj.AssemblyReference.cache
+C:\Users\fran_\OneDrive\Desktop\ppai\Red Sismica\Red Sismica\obj\Debug\Red_Sismica.PantallaRegResultadoRM.resources
+C:\Users\fran_\OneDrive\Desktop\ppai\Red Sismica\Red Sismica\obj\Debug\Red_Sismica.Properties.Resources.resources
+C:\Users\fran_\OneDrive\Desktop\ppai\Red Sismica\Red Sismica\obj\Debug\Red Sismica.csproj.GenerateResource.cache
+C:\Users\fran_\OneDrive\Desktop\ppai\Red Sismica\Red Sismica\obj\Debug\Red Sismica.csproj.CoreCompileInputs.cache
+C:\Users\fran_\OneDrive\Desktop\ppai\Red Sismica\Red Sismica\obj\Debug\Red Sismica.exe
+C:\Users\fran_\OneDrive\Desktop\ppai\Red Sismica\Red Sismica\obj\Debug\Red Sismica.pdb
