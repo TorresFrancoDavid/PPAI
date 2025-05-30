@@ -44,5 +44,25 @@ namespace Red_Sismica.Clases
             return false;
 
         }
+
+        public bool EsRechazado()
+        {
+            if (NombreEstado == "Rechazado")
+            {
+                return true;
+            }
+            return false;
+
+        }
+
+        public bool EsConfirmado()
+        {
+            if (NombreEstado == "Confirmado")
+            {
+                return true;
+            }
+            return false;
+
+        }
     }
 }

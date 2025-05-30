@@ -61,14 +61,104 @@ namespace Red_Sismica.Clases
 
             }
 
-            encontrado.FechaHoraFin = DateTime.Now;
+            encontrado.FechaHoraFin = fechaHoraActual;
 
             CrearNuevoCambioEstado(fechaHoraActual, estado, usuario);
         }
 
         public void CrearNuevoCambioEstado(DateTime fechaHoraActual, Estado estado, Usuario usuario)
         {
-            CambioEstado BloqueadoEnRevision = new CambioEstado(fechaHoraActual, estado, usuario);
+            if (estado.NombreEstado == "Bloqueado En Revisión")
+            {
+                CambioEstado BloqueadoEnRevision = new CambioEstado(fechaHoraActual, estado, usuario);
+                CambioEstados.Add(BloqueadoEnRevision);
+                Console.WriteLine(BloqueadoEnRevision.FechaHoraInicio);
+                Console.WriteLine(BloqueadoEnRevision.FechaHoraFin);
+            }
+            else if (estado.NombreEstado == "Rechazado")
+            {
+                CambioEstado Rechazado = new CambioEstado(fechaHoraActual, estado, usuario);
+                CambioEstados.Add(Rechazado);
+                Console.WriteLine(Rechazado.Usuario.Nombre);
+                Console.WriteLine(Rechazado.Estado.NombreEstado);
+                Console.WriteLine(Rechazado.FechaHoraInicio);
+                Console.WriteLine(Rechazado.FechaHoraFin);
+            }
+            else if (estado.NombreEstado == "Confirmado")
+            {
+                CambioEstado Confirmado = new CambioEstado(fechaHoraActual, estado, usuario);
+                CambioEstados.Add(Confirmado);
+                Console.WriteLine(Confirmado.Usuario.Nombre);
+                Console.WriteLine(Confirmado.Estado.NombreEstado);
+                Console.WriteLine(Confirmado.FechaHoraInicio);
+                Console.WriteLine(Confirmado.FechaHoraFin);
+            }
+        }
+
+        public (string, string, string) ObtenerDatosSismicos()
+        {
+            string nombreAlcance = AlcanceSismo.Nombre;
+            string nombreClasificacion = ClasificacionSismo.Nombre;
+            string nombreOrigen = OrigenDeGeneracion.Nombre;
+
+            return (nombreAlcance, nombreClasificacion, nombreOrigen);
+        }
+
+        public (List<string>, List<string>, List<string>) ObtenerSeriesTemporales()
+        {
+            List<string> listaSismografos = new List<string>();
+            List<string> listaFechasHoras = new List<string>();
+            List<string> listaValoresDenominacion = new List<string>();
+
+            foreach(SerieTemporal serieTemporal in SeriesTemporales)
+            {
+                string sismografo = null;
+                string fechasHoras = null;
+                string valoresDenominacion = null;
+                (sismografo, fechasHoras, valoresDenominacion) = serieTemporal.GetDatos();
+                listaSismografos.Add(sismografo);
+                listaFechasHoras.Add(fechasHoras);
+                listaValoresDenominacion.Add(valoresDenominacion);
+            }
+
+            return (listaSismografos, listaFechasHoras, listaValoresDenominacion);
+        }
+
+        public void RechazarEvento(DateTime fechaHoraActual, Estado estado, Usuario usuario)
+        {
+            CambioEstado encontrado = null;
+            foreach (CambioEstado cambioEstado in CambioEstados)
+            {
+                bool esEstadoActual = cambioEstado.EsEstadoActual();
+                if (esEstadoActual)
+                {
+                    encontrado = cambioEstado;
+                }
+
+            }
+
+            encontrado.FechaHoraFin = fechaHoraActual;
+
+            CrearNuevoCambioEstado(fechaHoraActual, estado, usuario);
+            
+        }
+
+        public void ConfirmarEvento(DateTime fechaHoraActual, Estado estado, Usuario usuario)
+        {
+            CambioEstado encontrado = null;
+            foreach (CambioEstado cambioEstado in CambioEstados)
+            {
+                bool esEstadoActual = cambioEstado.EsEstadoActual();
+                if (esEstadoActual)
+                {
+                    encontrado = cambioEstado;
+                }
+
+            }
+            encontrado.FechaHoraFin = fechaHoraActual;
+
+            CrearNuevoCambioEstado(fechaHoraActual, estado, usuario);
+
         }
     }
 

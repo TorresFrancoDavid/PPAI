@@ -49,13 +49,18 @@
     <Compile Include="Clases\AlcanceSismo.cs" />
     <Compile Include="Clases\CambioEstado.cs" />
     <Compile Include="Clases\ClasificacionSismo.cs" />
+    <Compile Include="Clases\DetalleMuestraSismica.cs" />
+    <Compile Include="Clases\EstacionSismologica.cs" />
     <Compile Include="Clases\Estado.cs" />
     <Compile Include="Clases\EventoSismico.cs" />
     <Compile Include="Clases\GestorEventoSismico.cs" />
     <Compile Include="Clases\MagnitudRichter.cs" />
+    <Compile Include="Clases\MuestraSismica.cs" />
     <Compile Include="Clases\OrigenDeGeneracion.cs" />
     <Compile Include="Clases\SerieTemporal.cs" />
     <Compile Include="Clases\Sesion.cs" />
+    <Compile Include="Clases\Sismografo.cs" />
+    <Compile Include="Clases\TipoDeDato.cs" />
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="PantallaRegResultadoRM.cs">
       <SubType>Form</SubType>
@@ -76,6 +81,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -89,6 +95,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
